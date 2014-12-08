@@ -8,7 +8,12 @@ For example: Did you felt the earthquake? and the users, no matter where they ar
 Try It Out!
 =====================================
 You can try it out online in (dahngeek.koding.io).
+
+
 1.) open 2 tabs of the same link. (dahngeek.koding.io)
+
 2.) In one of the tabs open the "begin option"
+
 3.) In the other click "I am a Researcher"
+
 4.) Post "Questions" and see them aapear live .. this works everywhere...(try it on your phone too!)
