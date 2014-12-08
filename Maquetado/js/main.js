@@ -7,6 +7,18 @@ jQuery(document).ready(function($){
 		$('#contenidoResearcher').fadeIn();
 		return false;
 	});
+	$('.mjm').click(function() {
+		$(this).html('<i class="fa fa-check-square"></i>');
+		$(this).css('background','red');
+		var valor = $(this).parent().find($(".idpregunta")).text();
+		geolocalizar();
+	});
+	$(".clicktobegin").click(function() {
+		$('#contenidoPrincipal').fadeOut();
+		$('#logobig').fadeOut();
+		$('#logosmall').fadeIn();
+		$('#contenidoListar').fadeIn();
+	});
 	$('#researcher').click(function() {
 		$('#contenidoPrincipal').fadeOut();
 		$('#logobig').fadeOut();
@@ -15,7 +27,13 @@ jQuery(document).ready(function($){
 		return false;
 	});
 
-	// This example displays an address form, using the autocomplete feature
-// of the Google Places API to help users fill in the information.
+function pizza(comida) {
+
+}
+
+PUBNUB.subscribe({
+    channel  : 'mjmNotifications',
+    callback : function(m){console.log(m)}
+});
 
 });

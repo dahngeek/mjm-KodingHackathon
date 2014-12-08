@@ -17,10 +17,14 @@
         <link rel='stylesheet' id='droidSansFont-css'  href='http://fonts.googleapis.com/css?family=Droid+Sans&#038;ver=4.0.1' type='text/css' media='all' />
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+        <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
     <script>
 // This example displays an address form, using the autocomplete feature
 // of the Google Places API to help users fill in the information.
-
+ var PUBNUB = PUBNUB.init({
+    publish_key: 'pub-c-4f155b5b-04f7-465b-b9b9-0aea3efc96c7',
+    subscribe_key: 'sub-c-526c638c-7b45-11e4-8ba2-02ee2ddab7fe'
+  });
 var placeSearch, autocomplete;
 var componentForm = {
   street_number: 'short_name',
@@ -77,6 +81,20 @@ function geolocate() {
       console.log(geolocation);
       autocomplete.setBounds(new google.maps.LatLngBounds(geolocation,
           geolocation));
+    });
+  }
+}
+function geolocalizar() {
+    var geolocation;
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        geolocation = new google.maps.LatLng(
+          position.coords.latitude, position.coords.longitude);
+        console.log(geolocation);
+        PUBNUB.publish({
+            channel: 'mjmNotifications',
+            message: [geolocation,{hora:Date.now()}]
+        });
     });
   }
 }
@@ -154,7 +172,7 @@ function geolocate() {
         </p>
     </div>
     <div class="buttons">
-        <div id="begin">BEGIN</div>
+        <div id="begin" class="clicktobegin">BEGIN</div>
         <div id="researcher">I'M A RESEARCHER</div>
     </div>
 </div>
@@ -168,9 +186,29 @@ function geolocate() {
     <div class="buttons">
         <div id="begin">SAVE & NOTIFY</div>
     </div>
+</div>
+<div id="contenidoListar" style="display:none;">
+    
+    <div class="buttons">
+        <div id="begin"><i style="color:#fff;"class="fa fa-trash-o fa-lg"></i> ---- New Questions: <span class="counter" style="background:red;border-radius:50%;width:25px;height:25px;display:inline-block;">0</span></div>
+    </div>
+    <br>
+    <div class="notification">
+        <div class="author">
+            <p class="researchername"><img src="img/dahngeek.png" width="50" class="authorimage" alt=""><span> <b>Researcher Name</b><br>date </span></p>
+        </div>
+        <div class="idpregunta" style="display:none">alsdfkj</div>
+        <div class="preguntaresearch">
+            <p>¿Did you Felt the Earthquake?</p>
+            <span>More informaiton about the question like tags and location</span>
+        </div>
+        <div class="mjm">MJM</div>
+        <div class="clearfix"></div>
+    </div>
+</div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-    <script src="http://tests.dahngeek.com/wordpress/wp-content/themes/InnovacionProfesionalTema/js/jquery.backstretch.min.js?ver=4.0.1"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

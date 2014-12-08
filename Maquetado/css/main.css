@@ -343,7 +343,42 @@ margin-left: -5px;
 
     background: #56BD56;
 }
-
+.author {
+    border-bottom: 1px solid #000;
+}
+.author > p {
+    margin: 3px;
+}
+.authorimage {
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+.researchername > span {
+    margin-top: 30px;
+    color: #000;
+}
+.notification {
+    background: rgba(255,255,255,0.7);
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.preguntaresearch p {
+    font-size: 110%;
+    font-weight: bold;
+    margin: 0;
+}
+.preguntaresearch span {
+    font-weight: lighter;
+}
+.notification .mjm {
+        background: #66CC66;
+        padding: 7px 35px;
+        float: right;
+        cursor: pointer;
+}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
