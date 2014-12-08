@@ -258,11 +258,54 @@ margin-left: -5px;
 }
 
 
+#contenidoPrincipal {
+    color: #fff;
+}
+#contenidoPrincipal .feature {
+    padding: 5px;
+    background: rgba(0,0,0,0.6);
+    padding-left: 30px;
 
+}
 
+#contenidoPrincipal .feature p {
+    color: #3266CC;
+}
 
+#contenidoPrincipal .featured {
+    background: #3266CC;
+    padding: 10px;
+    text-align: center;
 
+}
+#contenidoPrincipal .info {
+    background: #fff;
+    color: #000;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    float: left;
+}
 
+#contenidoPrincipal .buttons {
+    width: 40%;
+    margin-left: 2%;
+    float: left;
+    padding-top: 50px;
+}
+#begin, #researcher {
+    width: 100%;
+    font-size: 240%;
+    text-align: center;
+    padding: 25px 5px;
+    margin: 10px;
+    color: #fff;
+    background: #66CC66;
+}
+#begin:hover, #researcher:hover {
+
+    background: #56BD56;
+}
 
 
 
@@ -272,7 +315,31 @@ margin-left: -5px;
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 350px) {
+#contenidoPrincipal .info {
+    width: 90%;
+    padding: 5px;
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+}
+
+#contenidoPrincipal .buttons {
+    width: 90%;
+    padding: 5px;
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+}
+#begin, #researcher {
+    width: 100%;
+    font-size: 100%;
+    text-align: center;
+    padding: 15px 0px;
+    color: #fff;
+    margin: 10px 0px;
+    background: #66CC66;
+}
 
 /* ====================
     INTERMEDIATE: Menu

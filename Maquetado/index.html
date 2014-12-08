@@ -19,9 +19,10 @@
     </head>
     <body>
 <div id="logo">
-    <p style="text-align:center;"><img src="img/presentation1.png" width="200" alt=""></p>
+    <p style="text-align:center;display:none;" id="logosmall"><img src="img/presentation1.png" width="200" alt=""></p>
+    <p style="text-align:center;"><img src="img/presentation.png" width="350" alt=""></p>
 </div>
-<div id="lgin">
+<div id="lgin" style="display:none;">
     <div class="encabezadologin">LOGIN</div>
     <form action="">
         <div class="usuario">
@@ -34,6 +35,27 @@
             <input type="submit" id="skip" value="SKIP">
         </div>
     </form>
+</div>
+<div id="contenidoPrincipal">
+    <div class="feature">
+        <h1><i class="fa fa-rss"></i> Suscribe to your near Alerts</h1>
+        <p>Choose which alerts your are interested in and the ones from near you <i class="fa fa-flag-o"></i></p>
+    </div>
+    <div class="featured">
+        <h1>Collaborate just with a comfirmation</h1>
+    </div>
+    <div class="info">
+        <h1>¿How it Works?</h1>
+        <p>-mjm- like the confirmation sound everybody loves. <br> It's an web app that takes as basis a small comfirmation from the general users who use it. It helps not only researchers but in social problems many face.
+            <br>
+            For example: There is an Earthquake in Guatemala, how do we know in what departments it was felt.
+            <b>We solve that with a simple question:</b> ¿Did you felt that earthquake? <b>Possible Answers:</b> mjm. Nope. <b>If Mjm. It sends the user geolocation and the timestamp to de question creator, so he can get full graphical Visualization of the answers</b>
+        </p>
+    </div>
+    <div class="buttons">
+        <div id="begin">BEGIN</div>
+        <div id="researcher">I'M A RESEARCHER</div>
+    </div>
 </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
