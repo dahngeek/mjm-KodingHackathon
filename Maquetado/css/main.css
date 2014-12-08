@@ -190,6 +190,7 @@ border-bottom-left-radius: 6px;
 }
 
 .encabezadologin {
+    text-align: center;
     width: 100%;
     -webkit-border-top-left-radius: 6px;
 -webkit-border-top-right-radius: 6px;
