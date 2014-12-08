@@ -157,9 +157,104 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body {
+    font-family: 'Basic', sans-serif, Verdana;
+    width: 100%;
+    height: 100%;
+}
+
+#lgin {
+    width: 250px;
+    height: 260px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -125px;
+    margin-top: -130px;
+
+}
+
+#lgin > form {
+    background: #fff;
+    padding: 5px;
+    width: 100%;
+        -webkit-border-bottom-right-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+-moz-border-radius-bottomright: 6px;
+-moz-border-radius-bottomleft: 6px;
+border-bottom-right-radius: 6px;
+border-bottom-left-radius: 6px;
+}
+
+#skip {
+}
+
+.encabezadologin {
+    width: 100%;
+    -webkit-border-top-left-radius: 6px;
+-webkit-border-top-right-radius: 6px;
+-moz-border-radius-topleft: 6px;
+-moz-border-radius-topright: 6px;
+border-top-left-radius: 6px;
+border-top-right-radius: 6px;
+    background: #3266CC;
+    padding: 5px;
+    color: #fff;
+}
+
+.usuario {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.usuario i {
+    width: 25px;
+    background: #ccc;
+    padding: 10px;
+    border: #bbb;
+    text-align: center;
+    color: #828282;
+}
+.usuario > input {
+    padding: 7px 3px;
+}
 
 
+.contrasena i {
+        width: 25px;
+    background: #ccc;
+    padding: 10px;
+    border: #bbb;
+    text-align: center;
+    color: #828282;
+}
+.contrasena {
+    margin-bottom: 10px;
+}
+.contrasena > input {
+    padding: 7px 3px;
+}
 
+.enviar input {
+    background: #97CE68;
+    padding: 10px;
+    font-size: 130%;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin: 0 80px;
+}
+.enviar {
+    -webkit-border-bottom-right-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+-moz-border-radius-bottomright: 6px;
+-moz-border-radius-bottomleft: 6px;
+border-bottom-right-radius: 6px;
+border-bottom-left-radius: 6px;
+background: #EDEDE5;
+width: 100%;
+padding: 5px;
+margin-left: -5px;
+}
 
 
 
