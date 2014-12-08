@@ -43,9 +43,6 @@ function initialize() {
       { types: ['geocode'] });
   // When the user selects an address from the dropdown,
   // populate the address fields in the form.
-  google.maps.event.addListener(autocomplete, 'place_changed', function() {
-    fillInAddress();
-  });
 }
 
 // [START region_fillform]
@@ -84,7 +81,7 @@ function geolocate() {
     });
   }
 }
-function geolocalizar() {
+function geolocalizar(id) {
     var geolocation;
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -92,7 +89,7 @@ function geolocalizar() {
           position.coords.latitude, position.coords.longitude);
         console.log(geolocation);
         PUBNUB.publish({
-            channel: 'mjmNotifications',
+            channel: 'mjmNotificationsId'+id,
             message: [geolocation,{hora:Date.now()}]
         });
     });
@@ -180,20 +177,20 @@ function geolocalizar() {
     <div class="featured">
         <h1>Create a Question</h1>
     </div>
-        <div class="pregunta">Question: <input type="text" class="entrada" placeholder="Did you felt the Earthquake?"></div>
-        <div class="pregunta">Category: <input type="text" class="entrada" placeholder="#category"></div>
-        <div class="pregunta">Area: <input type="text" id="autocomplete" class="entrada" onFocus="geolocate()" placeholder="Guatemala City, GT"></div>
+        <div class="pregunta">Question: <input type="text" name="pregunta" class="entrada" placeholder="Did you felt the Earthquake?"></div>
+        <div class="pregunta">Category: <input type="text" name="categoria" class="entrada" placeholder="#category"></div>
+        <div class="pregunta">Area: <input type="text" name="area" id="autocomplete" class="entrada" onFocus="geolocate()" placeholder="Guatemala City, GT"></div>
     <div class="buttons">
-        <div id="begin">SAVE & NOTIFY</div>
+        <div id="begin" class="saveandnotify">SAVE & NOTIFY</div>
     </div>
 </div>
 <div id="contenidoListar" style="display:none;">
     
     <div class="buttons">
-        <div id="begin"><i style="color:#fff;"class="fa fa-trash-o fa-lg"></i> ---- New Questions: <span class="counter" style="background:red;border-radius:50%;width:25px;height:25px;display:inline-block;">0</span></div>
+        <div id="begin"><i style="color:#fff;" id="cleardata" class="fa fa-trash-o fa-lg"></i> ---- New Questions: <span class="counter" style="background:red;border-radius:50%;width:25px;height:25px;display:inline-block;">0</span></div>
     </div>
     <br>
-    <div class="notification">
+    <!--<div class="notification">
         <div class="author">
             <p class="researchername"><img src="img/dahngeek.png" width="50" class="authorimage" alt=""><span> <b>Researcher Name</b><br>date </span></p>
         </div>
@@ -205,7 +202,7 @@ function geolocalizar() {
         <div class="mjm">MJM</div>
         <div class="clearfix"></div>
     </div>
-</div>
+</div>-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
     <script src="js/jquery.backstretch.min.js"></script>
